@@ -14,8 +14,8 @@ contract ChangeLdoEmissionAdminTest is BaseTest {
     IEmissionManager(0x048f2228D7Bf6776f99aB50cB1b1eaB4D1d4cA73);
 
   function setUp() public {
-    vm.createSelectFork(vm.rpcUrl('polygon'), 35462470);
-    payload = new ChangeLdoEmissionAdminPayload();
+    vm.createSelectFork(vm.rpcUrl('polygon'));
+    payload = ChangeLdoEmissionAdminPayload(0xF08e4772754b59A036a520e24e2af2095f5CAFbb);
     _setUp(AaveV3Polygon.ACL_ADMIN);
     _execute(address(payload));
   }
